@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/TransactionsFragment">
+
+    <fragment
+        android:id="@+id/TransactionsFragment"
+        android:name="com.dkds.fragment.TransactionsFragment"
+        android:label="@string/transactions_header"
+        tools:layout="@layout/fragment_transactions">
+
+        <action
+            android:id="@+id/action_TransactionsFragment_to_TransactionEntryFragment"
+            app:destination="@id/TransactionEntryFragment" />
+        <action
+            android:id="@+id/action_TransactionsFragment_to_SettingsEntryFragment"
+            app:destination="@id/SettingsEntryFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/TransactionEntryFragment"
+        android:name="com.dkds.fragment.TransactionEntryFragment"
+        android:label="New Transaction"
+        tools:layout="@layout/fragment_transaction_entry">
+
+        <action
+            android:id="@+id/action_TransactionEntryFragment_to_TransactionsFragment"
+            app:destination="@id/TransactionsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/SettingsEntryFragment"
+        android:name="com.dkds.fragment.SettingsEntryFragment"
+        android:label="Settings"
+        tools:layout="@layout/fragment_settings_entry">
+
+        <action
+            android:id="@+id/action_SettingsEntryFragment_to_TransactionsFragment"
+            app:destination="@id/TransactionsFragment" />
+    </fragment>
+</navigation>
